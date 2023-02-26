@@ -1,0 +1,25 @@
+{
+    "contact1": {
+        "firstName": "Andrew",
+        "lastName": "Dorsett",
+        "email": "adorsett@gmail.com",
+        "favoriteColor": "Yellow",
+        "birthday": "1/1/1983"
+    },
+
+    "contact2": {
+        "firstName": "Cindy",
+        "lastName": "Jovet",
+        "email": "cjovet@gmail.com",
+        "favoriteColor": "green",
+        "birthday": "1/1/1953"
+    },
+
+    "contact3": {
+        "firstName": "Juvenal",
+        "lastName": "jovet",
+        "email": "jjovet@gmail.com",
+        "favoriteColor": "Blue",
+        "birthday": "1/1/1949"
+    }
+}
