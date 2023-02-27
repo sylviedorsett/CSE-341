@@ -12,7 +12,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/', require('./backend/routes'));
+app.use('/', require('./backend/routes/index.js'));
 
 mongodb.initDb((err, mongodb) => {
     if(err) {

@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const contacts = require('../contacts/contacts.json');
 
-router.use('/contacts', contacts);
+const route = require('./routes');
 
-module.exports = router;
+
+router.use('/contacts', route);
+
+
+
+module.exports = router
