@@ -11,5 +11,31 @@ GET http://localhost:3000/contacts/63fade0900e00b7dcd7ea245
 GET http://localhost:3000/contacts/63fade2200e00b7dcd7ea247
 
 //POST HTTP REQUESTS
+###
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Janine",
+    "lastName": "Hernandez",
+    "email": "janineH@test.com",
+    "favoriteColor": "purple",
+    "birthday": "01/01/1982"
+}
 
 //PUT HTTP REQUEST
+###
+PUT http://localhost:3000/contacts/63faddf500e00b7dcd7ea243 
+Content-Type: application/json
+
+{
+    "firstName": "Andrew",
+    "lastName": "Dorsett",
+    "email": "adorsett@test.com",
+    "favoriteColor": "orange",
+    "birthday": "01/01/1983"
+}
+
+//DELETE HTTP REQUESTS
+###
+DELETE http://localhost:3000/contacts/63fade2200e00b7dcd7ea247
