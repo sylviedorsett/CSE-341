@@ -2,13 +2,26 @@
 ### 
 GET http://localhost:3000/contacts 
 
+//ON RENDER
+###
+GET https://personalassignment3-hrmu.onrender.com/contacts/ 
+
 //GET HTTP REQUESTS
 ### 
 GET http://localhost:3000/contacts/63faddf500e00b7dcd7ea243 
+###
+GET https://personalassignment3-hrmu.onrender.com/contacts/63faddf500e00b7dcd7ea243 
+
+
 ### 
 GET http://localhost:3000/contacts/63fade0900e00b7dcd7ea245 
+###
+GET https://personalassignment3-hrmu.onrender.com/contacts/63fade0900e00b7dcd7ea245  
+
 ### 
 GET http://localhost:3000/contacts/63fade2200e00b7dcd7ea247
+###
+GET https://personalassignment3-hrmu.onrender.com/contacts/63fade2200e00b7dcd7ea247 
 
 //POST HTTP REQUESTS
 ###
@@ -22,10 +35,22 @@ Content-Type: application/json
     "favoriteColor": "purple",
     "birthday": "01/01/1982"
 }
+//POST ON RENDER
+###
+POST https://personalassignment3-hrmu.onrender.com/contacts/
+Content-Type: application/json
+
+{
+    "firstName": "Janine",
+    "lastName": "Hernandez",
+    "email": "jhernandez@test.com",
+    "favoriteColor": "purple",
+    "birthday": "01/01/1982"
+}
 
 //PUT HTTP REQUEST
 ###
-PUT http://localhost:3000/contacts/63faddf500e00b7dcd7ea243 
+PUT https://personalassignment3-hrmu.onrender.com/contacts/63faddf500e00b7dcd7ea243 
 Content-Type: application/json
 
 {
@@ -38,4 +63,5 @@ Content-Type: application/json
 
 //DELETE HTTP REQUESTS
 ###
-DELETE http://localhost:3000/contacts/64001de3c91d56d3d34d1906
+DELETE https://personalassignment3-hrmu.onrender.com/contacts/64002276286741f9c1ec7611
+
