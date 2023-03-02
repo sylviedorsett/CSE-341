@@ -19,7 +19,7 @@ const updateContact = async (req, res, oldKey, oldValue, newKey, newValue) => {
     const result = await mongodb.getDb().db("PersonalAssignment_2").collection('contacts').find({_id: userId});
     
     //Use the updateOne() method and pass in the updated contact
-    result.updateOne(updatedData)
+    result.findOneAndUpdate(updatedData)
     .then(result => {
         res.sendStatus(204);
     })
