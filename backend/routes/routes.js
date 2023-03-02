@@ -8,14 +8,14 @@ router.get('/:id', getContactsController.getOneContact);
 
 //Conect the route to the postContacts Controller
 const postContactsController = require('../controllers/postContacts');
-router.get('/', postContactsController.createContact);
+router.post('/', postContactsController.createContact);
 
 //Connect the route to the putContacts Controller
 const putContactsController = require('../controllers/putContacts');
-router.get('/:id', putContactsController.updateContact);
+router.put('/:id', putContactsController.updateContact);
 
 //Connect the route to the deleteContacts Controller
 const deleteContactsController = require('../controllers/deleteContacts');
-router.get('/:id', deleteContactsController.deleteContact);
+router.delete('/:id', deleteContactsController.deleteContact);
 
 module.exports = router;

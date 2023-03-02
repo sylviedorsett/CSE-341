@@ -18,7 +18,7 @@ Content-Type: application/json
 {
     "firstName": "Janine",
     "lastName": "Hernandez",
-    "email": "janineH@test.com",
+    "email": "jhernandez@test.com",
     "favoriteColor": "purple",
     "birthday": "01/01/1982"
 }
@@ -38,4 +38,4 @@ Content-Type: application/json
 
 //DELETE HTTP REQUESTS
 ###
-DELETE http://localhost:3000/contacts/63fade2200e00b7dcd7ea247
+DELETE http://localhost:3000/contacts/64001de3c91d56d3d34d1906
