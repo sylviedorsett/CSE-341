@@ -1,2 +1,87 @@
-GET http://localhost:3000 HTTP/1.1
+//GET REQUESTS BY COLLECTION
+### Local Host
+GET http://localhost:3000/contacts 
+### On Render
+GET https://personalassignment3-hrmu.onrender.com/contacts/ 
 
+
+
+//GET REQUESTS BY ID
+### Local Host
+GET http://localhost:3000/contacts/63faddf500e00b7dcd7ea243 
+### On Render
+GET https://personalassignment3-hrmu.onrender.com/contacts/63faddf500e00b7dcd7ea243 
+
+
+### Local Host
+GET http://localhost:3000/contacts/63fade0900e00b7dcd7ea245 
+### On Render
+GET https://personalassignment3-hrmu.onrender.com/contacts/63fade0900e00b7dcd7ea245  
+
+### Local Host
+GET http://localhost:3000/contacts/63fade2200e00b7dcd7ea247
+### On Render
+GET https://personalassignment3-hrmu.onrender.com/contacts/63fade2200e00b7dcd7ea247 
+
+
+
+//POST REQUESTS
+### Local Host
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+    "firstName": "Cindy",
+    "lastName": "Jovet",
+    "email": "cjovet@test.com",
+    "favoriteColor": "green",
+    "birthday": "01/01/1953"
+}
+
+### On Render
+POST https://personalassignment3-hrmu.onrender.com/contacts/
+Content-Type: application/json
+
+{
+    "firstName": "Cindy",
+    "lastName": "Jovet",
+    "email": "cjovet@test.com",
+    "favoriteColor": "green",
+    "birthday": "01/01/1953"
+}
+
+
+
+
+//PUT REQUESTS
+### Local Host
+PUT http://localhost:3000/contacts/63faddf500e00b7dcd7ea243 
+Content-Type: application/json
+
+{
+    "firstName": "Andrew",
+    "lastName": "Dorsett",
+    "email": "adorsett@test.com",
+    "favoriteColor": "orange",
+    "birthday": "01/01/1983"
+}
+
+### On Render
+PUT https://personalassignment3-hrmu.onrender.com/contacts/63faddf500e00b7dcd7ea243 
+Content-Type: application/json
+
+{
+    "firstName": "Andrew",
+    "lastName": "Dorsett",
+    "email": "adorsett@test.com",
+    "favoriteColor": "yellow",
+    "birthday": "01/01/1983"
+}
+
+
+
+//DELETE REQUESTS
+### Local Host
+DELETE http://localhost:3000/contacts/64013d5b1a6916911fd9f4d4
+### On Render
+DELETE https://personalassignment3-hrmu.onrender.com/contacts/64003e373e4dabc48b905bc8
