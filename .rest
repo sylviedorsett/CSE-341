@@ -82,6 +82,6 @@ Content-Type: application/json
 
 //DELETE REQUESTS
 ### Local Host
-DELETE http://localhost:3000/contacts/64013d5b1a6916911fd9f4d4
+DELETE http://localhost:3000/contacts/64018a21bd37d184f57432ff
 ### On Render
 DELETE https://personalassignment3-hrmu.onrender.com/contacts/64003e373e4dabc48b905bc8
