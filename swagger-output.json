@@ -5,10 +5,10 @@
     "description": "An API to GET, PUT, POST, and DELETE contacts from a database.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "https://personalassignment4-c7zu.onrender.com/contacts/api-docs/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/contacts/": {
