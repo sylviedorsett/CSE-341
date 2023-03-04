@@ -5,12 +5,19 @@
     "description": "An API to GET, PUT, POST, and DELETE contacts from a database.",
     "version": "1.0.0"
   },
-  "host": "https://personalassignment4-c7zu.onrender.com",
+  "host": "personalassignment4-c7zu.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
+    "/contacts/api-docs": {
+      "get": {
+        "description": "",
+        "parameters": [],
+        "responses": {}
+      }
+    },
     "/contacts/": {
       "get": {
         "description": "",

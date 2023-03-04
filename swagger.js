@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'An API to GET, PUT, POST, and DELETE contacts from a database.'
   },
-  host: 'localhost:3000',
+  host: 'personalassignment4-c7zu.onrender.com',
   schemes: ['http']
 };
 
