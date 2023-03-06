@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./backend/db/connect');
-const cors = require('cors');
+
 
 //Create a Port, ensure it directs to the environment variables OR the port you want
 const port = process.env.PORT || 3000;
@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 //Create an instance of the Express server
 const app = express();
 
-app.use(cors());
+
 //Tell the instance of the server to 'use' (an express method) a body-parser module
 app.use(bodyParser.json());
 
