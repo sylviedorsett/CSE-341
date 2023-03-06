@@ -6,7 +6,7 @@ const doc = {
     description: 'An API to GET, PUT, POST, and DELETE contacts from a database.'
   },
   host: 'personalassignment4-c7zu.onrender.com',
-  schemes: ['http']
+  schemes: ['https']
 };
 
 const outputFile = './swagger-output.json';
