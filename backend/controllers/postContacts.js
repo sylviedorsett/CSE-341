@@ -18,7 +18,6 @@ const createContact = async (req, res) => {
     .then((result) => {
       if (result.acknowledged) {
         const id = result.insertedId;
-        res.body = id;
         console.log(id);
       }
       res.sendStatus(201);
