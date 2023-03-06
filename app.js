@@ -23,10 +23,10 @@ app.use((req, res, next) => {
   );
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PUT, PATCH, OPTIONS, DELETE');
   next();
-});
+}).use('/', require('./backend/routes/index.js'));
 
 //Direct the app to the routes entry point
-app.use('/', require('./backend/routes/index.js'));
+
 
 //Connect to the database
 mongodb.initDb((err, mongodb) => {
