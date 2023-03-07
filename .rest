@@ -1,1 +1,151 @@
-connection_string = 
+//**********************GET ALL************************
+//courses
+### 
+Local Host 
+GET http://localhost:3000/courses 
+
+### 
+On Render 
+GET 
+
+//instructors
+###
+Local Host
+GET http://localhost:3000/instructors
+
+### 
+On Render 
+GET
+
+//**********************GET ONE************************
+//course
+### 
+Local Host 
+GET http://localhost:3000/courses/
+
+### 
+On Render 
+GET 
+
+
+//instructor
+### 
+Local Host 
+GET http://localhost:3000/instructors/
+
+### 
+On Render 
+GET 
+
+//*******************POST***************************
+//POST a new course
+### 
+Local Host 
+POST http://localhost:3000/courses 
+Content-Type: application/json
+
+{
+    "courseTitle": "Algebra",
+    "courseId": "Math-111",
+    "instructor": "George Santos",
+    "classMax": 50,
+    "currentEnrollment": 37,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+### 
+On Render 
+POST 
+Content-Type: application/json
+
+{
+    "courseTitle": "Algebra",
+    "courseId": "Math-111",
+    "instructor": "George Santos",
+    "classMax": 50,
+    "currentEnrollment": 37,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+//POST a new instructor
+### 
+Local Host 
+POST http://localhost:3000/instructors 
+Content-Type: application/json
+
+{
+    "firstName": "George",
+    "lastName": "Santos",
+    "department": "Mathematics",
+    "email": "gsantos@test.com",
+    "tenure": false,
+    "course": "Math-111"
+}
+
+### 
+On Render 
+POST 
+Content-Type: application/json
+
+{
+    "firstName": "George",
+    "lastName": "Santos",
+    "department": "Mathematics",
+    "email": "gsantos@test.com",
+    "tenure": false,
+    "course": "Math-111"
+}
+
+//******************UPDATE/PUT****************************
+//UPDATE (PUT) a course by ID
+### 
+Local Host 
+PUT http://localhost:3000/contacts/
+Content-Type: application/json
+
+{
+    "courseTitle": "Algebra",
+    "courseId": "Math-111",
+    "instructor": "George Santos",
+    "classMax": 50,
+    "currentEnrollment": 37,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+//UPDATE (PUT) an instructor by ID
+### 
+On Render 
+PUT 
+Content-Type: application/json
+
+{
+    "courseTitle": "Algebra",
+    "courseId": "Math-111",
+    "instructor": "George Santos",
+    "classMax": 50,
+    "currentEnrollment": 48,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+//******************DELETE****************************
+//DELETE a course
+### 
+Local Host 
+DELETE http://localhost:3000/courses/
+
+### 
+On Render 
+DELETE 
+
+//DELETE an instructor
+###
+Local Host
+DELETE http://localhost:3000/instructors/
+
+###
+On Render
+DELETE 
