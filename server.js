@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 
 const port = process.env.PORT || 3000;
-
 const server = express();
 
 server
@@ -16,8 +15,9 @@ server
       "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
     );
     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+    next();
   })
-  .use("/", require("./routes/index"));
+  .use("/", require("./routes/index.js"));
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
