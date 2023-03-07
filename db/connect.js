@@ -27,6 +27,6 @@ const getDb = () => {
 };
 
 module.exports = {
-  initDB,
+  initDb,
   getDb,
 };

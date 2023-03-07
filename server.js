@@ -1,5 +1,5 @@
 //Imports
-const express = requrie("express");
+const express = require("express");
 const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 
@@ -19,7 +19,7 @@ server
   })
   .use("/", require("./routes/index"));
 
-mongodb.initDB((err, mongodb) => {
+mongodb.initDb((err, mongodb) => {
   if (err) {
     console.log("Something went wrong.", err);
   } else {
