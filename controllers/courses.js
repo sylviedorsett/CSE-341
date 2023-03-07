@@ -9,7 +9,7 @@ const getAllCourses = async (req, res, next) => {
     .collection("courses")
     .find();
   courses.toArray().then((list) => {
-    res.setHeader("Content-Type", "applicatoin/json");
+    res.setHeader("Content-Type", "application/json");
     res.status(200).json(list);
   });
 };
