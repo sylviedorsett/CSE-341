@@ -1,46 +1,38 @@
 //**********************GET ALL************************
 //courses
-### 
-Local Host 
-GET https://localhost:3000/courses 
+### Local Host
+GET http://localhost:3000/courses 
 
-### 
-On Render 
+### On Render
 GET https://personalassignment5-4gqp.onrender.com/courses
 
 //instructors
-###
-Local Host
+### Local Host
 GET http://localhost:3000/instructors
 
-### 
-On Render 
+### On Render 
 GET https://personalassignment5-4gqp.onrender.com/instructors
 
 //**********************GET ONE************************
 //course
-### 
-Local Host 
-GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
+### Local Host 
+GET http://localhost:3000/courses/6407998c50ea6decbd5fe3f3
 
-### 
-On Render 
+
+### On Render 
 GET https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
 
 
 //instructor
-### 
-Local Host 
-GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
+### Local Host 
+GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
 
-### 
-On Render 
+### On Render 
 GET https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3ef
 
 //*******************POST***************************
 //POST a new course
-### 
-Local Host 
+### Local Host 
 POST http://localhost:3000/courses 
 Content-Type: application/json
 
@@ -54,8 +46,7 @@ Content-Type: application/json
     "endDate": "7/24/2023"
 }
 
-### 
-On Render 
+### On Render 
 POST https://personalassignment5-4gqp.onrender.com/courses
 Content-Type: application/json
 
@@ -70,8 +61,7 @@ Content-Type: application/json
 }
 
 //POST a new instructor
-### 
-Local Host 
+### Local Host 
 POST http://localhost:3000/instructors 
 Content-Type: application/json
 
@@ -84,8 +74,7 @@ Content-Type: application/json
     "course": "PYS-212"
 }
 
-### 
-On Render 
+### On Render 
 POST https://personalassignment5-4gqp.onrender.com/instructors
 Content-Type: application/json
 
@@ -100,9 +89,8 @@ Content-Type: application/json
 
 //******************UPDATE/PUT****************************
 //UPDATE (PUT) a course by ID
-### 
-Local Host 
-PUT http://localhost:3000/courses
+### Local Host 
+PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 Content-Type: application/json
 
 {
@@ -110,13 +98,12 @@ Content-Type: application/json
     "courseId": "MATH-111",
     "instructor": "George Santos",
     "classMax": 50,
-    "currentEnrollment": 42,
+    "currentEnrollment": 37,
     "startDate": "04/17/2023",
     "endDate": "7/24/2023"
 }
 
-### 
-On Render 
+### On Render 
 PUT https://personalassignment5-4gqp.onrender.com/courses
 Content-Type: application/json
 
@@ -131,9 +118,8 @@ Content-Type: application/json
 }
 
 //UPDATE (PUT) an instructor by ID
-###
-Local Host
-PUT http://localhost:3000/insructors
+### Local Host
+PUT http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
 Content-Type: application/json
 
 {
@@ -141,12 +127,11 @@ Content-Type: application/json
     "lastName": "Pullman",
     "department": "Science",
     "email": "epullman@test.com",
-    "tenure": true,
+    "tenure": false,
     "course": "ENG-200"
 }
 
-###
-On Render
+### On Render
 PUT https://personalassignment5-4gqp.onrender.com/instructors
 Content-Type: application/json
 {
@@ -160,19 +145,15 @@ Content-Type: application/json
 
 //******************DELETE****************************
 //DELETE a course
-### 
-Local Host 
-DELETE http://localhost:3000/courses
+### Local Host 
+DELETE http://localhost:3000/courses/6407eb544fce1978125daac0
 
-### 
-On Render 
+### On Render 
 DELETE https://personalassignment5-4gqp.onrender.com/courses
 
 //DELETE an instructor
-###
-Local Host
-DELETE http://localhost:3000/instructors
+### Local Host
+DELETE http://localhost:3000/instructors/6407eb924fce1978125daac1
 
-###
-On Render
+### On Render
 DELETE https://personalassignment5-4gqp.onrender.com/instructors
