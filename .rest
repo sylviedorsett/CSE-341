@@ -1,25 +1,37 @@
 //**********************GET ALL************************
-//courses
-### 
-GET https://personalassignment5-4gqp.onrender.com/courses
 
-//instructors
-###
+//COURSES
+### Render
+GET https://personalassignment5-4gqp.onrender.com/courses
+### Local Host
+GET http://localhost:3000/courses
+
+//INSTRUCTORS
+### Render
 GET https://personalassignment5-4gqp.onrender.com/instructors
+### Local Host
+GET http://localhost:3000/instructors
+
+
 
 //**********************GET ONE************************
-//course
-### 
+//COURSE
+### Render
 GET https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
+### Local Host
+GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 
-
-//instructor
-### 
+//INSTRUCTOR
+### Render
 GET https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3ef
+### Local Host
+GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
+
+
 
 //*******************POST***************************
-//POST a new course
-###
+//COURSE
+### Render
 POST https://personalassignment5-4gqp.onrender.com/courses
 Content-Type: application/json
 
@@ -33,8 +45,22 @@ Content-Type: application/json
     "endDate": "7/24/2023"
 }
 
-//POST a new instructor
-###
+### Local Host
+POST http://localhost:3000/courses
+Content-Type: application/json
+
+{
+    "courseTitle": "Under Water Basket Weaving",
+    "courseId": "PYS-212",
+    "instructor": "Lily Palmer",
+    "classMax": 12,
+    "currentEnrollment": 0,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+//INSTRUCTOR
+### Render
 POST https://personalassignment5-4gqp.onrender.com/instructors
 Content-Type: application/json
 
@@ -47,9 +73,24 @@ Content-Type: application/json
     "course": "PYS-212"
 }
 
+### Local Host
+POST http://localhost:3000/instructors
+Content-Type: application/json
+
+{
+    "firstName": "Lily",
+    "lastName": "Palmer",
+    "department": "Pys-Ed",
+    "email": "lpalmer@test.com",
+    "tenure": false,
+    "course": "PYS-212"
+}
+
+
+
 //******************UPDATE/PUT****************************
-//UPDATE (PUT) a course by ID
-### 
+//COURSE
+### Render
 PUT https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
 Content-Type: application/json
 
@@ -58,13 +99,27 @@ Content-Type: application/json
     "courseId": "MATH-111",
     "instructor": "George Santos",
     "classMax": 50,
-    "currentEnrollment": 42,
+    "currentEnrollment": 37,
     "startDate": "04/17/2023",
     "endDate": "7/24/2023"
 }
 
-//UPDATE (PUT) an instructor by ID
-###
+### Local Host
+PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4
+Content-Type: application/json
+
+{
+    "courseTitle": "Algebra",
+    "courseId": "MATH-111",
+    "instructor": "George Santos",
+    "classMax": 50,
+    "currentEnrollment": 37,
+    "startDate": "04/17/2023",
+    "endDate": "7/24/2023"
+}
+
+//INSTRUCTOR
+### Render
 PUT https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3f3
 Content-Type: application/json
 
@@ -77,11 +132,32 @@ Content-Type: application/json
     "course": "ENG-200"
 }
 
-//******************DELETE****************************
-//DELETE a course
-###
-DELETE https://personalassignment5-4gqp.onrender.com/courses/6407ef76d85acd1aff28e9ca
+### Local Host
+PUT http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
+Content-Type: application/json
 
-//DELETE an instructor
-###
-DELETE https://personalassignment5-4gqp.onrender.com/instructors/6407ef96d85acd1aff28e9cb
+{
+    "firstName": "Esther",
+    "lastName": "Pullman",
+    "department": "Science",
+    "email": "epullman@test.com",
+    "tenure": true,
+    "course": "ENG-200"
+}
+
+
+
+//******************DELETE****************************
+//COURSE
+### Render
+DELETE https://personalassignment5-4gqp.onrender.com/courses/6407f76f7b2cd77495092113
+
+### Local Host
+DELETE http://localhost:3000/courses/6407f7ad8b3ef02ba7c2822d
+
+//INSTRUCTOR
+### Render
+DELETE https://personalassignment5-4gqp.onrender.com/instructors/6407f7d27b2cd77495092114
+
+### Local Host
+DELETE http://localhost:3000/instructors/6407f7d48b3ef02ba7c2822e
