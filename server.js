@@ -14,7 +14,10 @@ server
       "Access-Control-Allow-Headers",
       "Origin, X-Requested-With, Content-Type, Accept, Z-Key"
     );
-    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "POST, GET, PUT, PATCH, OPTIONS, DELETE"
+    );
     next();
   })
   .use("/", require("./routes/index.js"));

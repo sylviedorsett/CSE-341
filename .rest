@@ -2,7 +2,7 @@
 //courses
 ### 
 Local Host 
-GET http://localhost:3000/courses 
+GET https://localhost:3000/courses 
 
 ### 
 On Render 
