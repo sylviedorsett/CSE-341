@@ -6,7 +6,7 @@ GET https://localhost:3000/courses
 
 ### 
 On Render 
-GET 
+GET https://personalassignment5-4gqp.onrender.com/courses
 
 //instructors
 ###
@@ -15,7 +15,7 @@ GET http://localhost:3000/instructors
 
 ### 
 On Render 
-GET
+GET https://personalassignment5-4gqp.onrender.com/instructors
 
 //**********************GET ONE************************
 //course
@@ -25,7 +25,7 @@ GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 
 ### 
 On Render 
-GET 
+GET https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
 
 
 //instructor
@@ -35,7 +35,7 @@ GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
 
 ### 
 On Render 
-GET 
+GET https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3ef
 
 //*******************POST***************************
 //POST a new course
@@ -56,7 +56,7 @@ Content-Type: application/json
 
 ### 
 On Render 
-POST 
+POST https://personalassignment5-4gqp.onrender.com/courses
 Content-Type: application/json
 
 {
@@ -86,7 +86,7 @@ Content-Type: application/json
 
 ### 
 On Render 
-POST 
+POST https://personalassignment5-4gqp.onrender.com/instructors
 Content-Type: application/json
 
 {
@@ -102,7 +102,7 @@ Content-Type: application/json
 //UPDATE (PUT) a course by ID
 ### 
 Local Host 
-PUT http://localhost:3000/contacts/
+PUT http://localhost:3000/courses
 Content-Type: application/json
 
 {
@@ -117,7 +117,7 @@ Content-Type: application/json
 
 ### 
 On Render 
-PUT 
+PUT https://personalassignment5-4gqp.onrender.com/courses
 Content-Type: application/json
 
 {
@@ -147,7 +147,7 @@ Content-Type: application/json
 
 ###
 On Render
-PUT
+PUT https://personalassignment5-4gqp.onrender.com/instructors
 Content-Type: application/json
 {
     "firstName": "Esther",
@@ -162,17 +162,17 @@ Content-Type: application/json
 //DELETE a course
 ### 
 Local Host 
-DELETE http://localhost:3000/courses/
+DELETE http://localhost:3000/courses
 
 ### 
 On Render 
-DELETE 
+DELETE https://personalassignment5-4gqp.onrender.com/courses
 
 //DELETE an instructor
 ###
 Local Host
-DELETE http://localhost:3000/instructors/
+DELETE http://localhost:3000/instructors
 
 ###
 On Render
-DELETE 
+DELETE https://personalassignment5-4gqp.onrender.com/instructors
