@@ -20,6 +20,7 @@ const getInstructor = async (req, res, next) => {
   const instructor = await mongodb
     .getDb()
     .db("PersonalAssignment5")
+    .collection("instructors")
     .find({ _id: instructorId });
   instructor.toArray().then((list) => {
     res.setHeader("Content-Type", "application/json");
