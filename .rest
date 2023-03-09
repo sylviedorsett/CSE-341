@@ -157,7 +157,7 @@ DELETE http://localhost:3000/courses/6407f7ad8b3ef02ba7c2822d
 
 //INSTRUCTOR
 ### Render
-DELETE https://personalassignment5-4gqp.onrender.com/instructors/6407f7d27b2cd77495092114
+DELETE https://personalassignment5-4gqp.onrender.com/instructors/6408df38ff45b9d45ede9239
 
 ### Local Host
 DELETE http://localhost:3000/instructors/6407f7d48b3ef02ba7c2822e
