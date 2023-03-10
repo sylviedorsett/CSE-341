@@ -91,7 +91,7 @@ Content-Type: application/json
 //******************UPDATE/PUT****************************
 //COURSE
 ### Render
-PUT https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
+PUT https://personalassignment5-4gqp.onrender.com/courses/640a7c9ca6ef3814ca785adf
 Content-Type: application/json
 
 {
@@ -105,7 +105,7 @@ Content-Type: application/json
 }
 
 ### Local Host
-PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4
+PUT http://localhost:3000/courses/640a81b7a52d0a8e65226b6a
 Content-Type: application/json
 
 {
@@ -150,10 +150,10 @@ Content-Type: application/json
 //******************DELETE****************************
 //COURSE
 ### Render
-DELETE https://personalassignment5-4gqp.onrender.com/courses/6407f76f7b2cd77495092113
+DELETE https://personalassignment5-4gqp.onrender.com/courses/640a7c8ea6ef3814ca785ade
 
 ### Local Host
-DELETE http://localhost:3000/courses/6407f7ad8b3ef02ba7c2822d
+DELETE http://localhost:3000/courses/640a81b7a52d0a8e65226b6a
 
 //INSTRUCTOR
 ### Render

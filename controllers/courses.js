@@ -3,18 +3,28 @@ const ObjectId = require("mongodb").ObjectId;
 
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
-  const courses = await mongodb
-    .getDb()
-    .db("PersonalAssignment5")
-    .collection("courses")
-    .find();
-  courses.toArray((err, list) => {
-    if (err) {
-      res.status(400).json({ message: err });
-    }
-    res.setHeader("Content-Type", "application/json");
-    res.status(200).json(list);
-  });
+  try {
+    const courses = await mongodb
+      .getDb()
+      .db("PersonalAssignment5")
+      .collection("courses")
+      .find();
+
+    courses.toArray((err, list) => {
+      if (err) {
+        res.status(400).json({ message: err });
+      } else {
+        res.setHeader("Content-Type", "application/json");
+        res.status(200).json(list);
+      }
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json(
+        response.error || "An internal error occurred. Please try again later."
+      );
+  }
 };
 
 //Function to GET one course by ID from database
@@ -59,7 +69,7 @@ const postCourse = async (req, res) => {
       .insertOne(newCourse);
     if (response.acknowledged) {
       console.log(response.insertedId);
-      res.sendStatus(201).json(response);
+      res.status(201).json(response);
     }
   } catch (error) {
     res
@@ -110,7 +120,7 @@ const deleteCourse = async (req, res) => {
       .collection("courses")
       .deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
-      res.status(200);
+      res.status(200).json(response);
     } else {
       res
         .status(500)
