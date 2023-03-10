@@ -9,15 +9,15 @@ const getAllCourses = async (req, res, next) => {
       .db("PersonalAssignment5")
       .collection("courses")
       .find();
-
-    courses.toArray((err, list) => {
-      if (err) {
-        res.status(400).json({ message: err });
-      } else {
+    try {
+      courses.toArray().then((list) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(list);
-      }
-    });
+      });
+    }
+    catch (err) {
+      res.status(400).json({ message: err });
+    }
   } catch (error) {
     res
       .status(500)
@@ -28,7 +28,7 @@ const getAllCourses = async (req, res, next) => {
 };
 
 //Function to GET one course by ID from database
-const getCourse = async (req, res, next) => {
+const getCourse = async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     const courseId = new ObjectId(req.params.id);
     const course = await mongodb
@@ -36,13 +36,15 @@ const getCourse = async (req, res, next) => {
       .db("PersonalAssignment5")
       .collection("courses")
       .find({ _id: courseId });
-    course.toArray((err, list) => {
-      if (err) {
-        res.status(400).json({ message: err });
-      }
-      res.setHeader("Content-Type", "application/json");
-      res.status(200).json(list[0]);
-    });
+    try {
+      course.toArray().then((list) => {
+        res.setHeader("Content-Type", "application/json");
+        res.status(200).json(list[0]);
+      });
+    } 
+    catch (err) {
+      res.status(400).json({ message: err });
+    }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
   }
@@ -90,7 +92,7 @@ const putCourse = async (req, res) => {
       classMax: req.body.classMax,
       currentEnrollment: req.body.currentEnrollment,
       startDate: req.body.startDate,
-      endDate: req.body.endDate,
+      endDate: req.body.endDate
     };
 
     const response = await mongodb

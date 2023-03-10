@@ -13,7 +13,6 @@ GET https://personalassignment5-4gqp.onrender.com/instructors
 GET http://localhost:3000/instructors
 
 
-
 //**********************GET ONE************************
 //COURSE
 ### Render
@@ -153,7 +152,7 @@ Content-Type: application/json
 DELETE https://personalassignment5-4gqp.onrender.com/courses/640a7c8ea6ef3814ca785ade
 
 ### Local Host
-DELETE http://localhost:3000/courses/640a81b7a52d0a8e65226b6a
+DELETE http://localhost:3000/courses/640b7d3929adcc0b42981967
 
 //INSTRUCTOR
 ### Render
