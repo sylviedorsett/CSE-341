@@ -14,8 +14,7 @@ const getAllCourses = async (req, res, next) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(list);
       });
-    }
-    catch (err) {
+    } catch (err) {
       res.status(400).json({ message: err });
     }
   } catch (error) {
@@ -41,8 +40,7 @@ const getCourse = async (req, res) => {
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(list[0]);
       });
-    } 
-    catch (err) {
+    } catch (err) {
       res.status(400).json({ message: err });
     }
   } else {
@@ -92,7 +90,7 @@ const putCourse = async (req, res) => {
       classMax: req.body.classMax,
       currentEnrollment: req.body.currentEnrollment,
       startDate: req.body.startDate,
-      endDate: req.body.endDate
+      endDate: req.body.endDate,
     };
 
     const response = await mongodb
@@ -122,11 +120,12 @@ const deleteCourse = async (req, res) => {
       .collection("courses")
       .deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
-      res.status(200).json(response);
-    } else {
-      res
-        .status(500)
-        .json(response.error || "Unable to delete contact. Please try again.");
+      res.status(204).json(response);
+    }
+    else {
+    res
+      .status(500)
+      .json(response.error || "Unable to delete contact. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");

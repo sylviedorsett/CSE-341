@@ -149,10 +149,10 @@ Content-Type: application/json
 //******************DELETE****************************
 //COURSE
 ### Render
-DELETE https://personalassignment5-4gqp.onrender.com/courses/640bd0fe754b09e91746b804
+DELETE https://personalassignment5-4gqp.onrender.com/courses/64
 
 ### Local Host
-DELETE http://localhost:3000/courses/640b7d4829adcc0b42981968
+DELETE http://localhost:3000/courses/640b7d4829adcc0b429819
 
 //INSTRUCTOR
 ### Render
