@@ -24,7 +24,7 @@ GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 ### Render
 GET https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3ef
 ### Local Host
-GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
+GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
 
 
 
@@ -104,7 +104,7 @@ Content-Type: application/json
 }
 
 ### Local Host
-PUT http://localhost:3000/courses/640a81b7a52d0a8e65226b6a
+PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 Content-Type: application/json
 
 {
