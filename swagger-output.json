@@ -5,7 +5,7 @@
     "description": "An application to get, update, and delete College Course and Instructor information from a database.",
     "version": "1.0.0"
   },
-  "host": "personalassignment5-4gqp.onrender.com",
+  "host": "personalassignment6-t3uq.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
