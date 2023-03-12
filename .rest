@@ -2,13 +2,13 @@
 
 //COURSES
 ### Render
-GET https://personalassignment5-4gqp.onrender.com/courses
+GET https://personalassignment6-t3uq.onrender.com/courses
 ### Local Host
 GET http://localhost:3000/courses
 
 //INSTRUCTORS
 ### Render
-GET https://personalassignment5-4gqp.onrender.com/instructors
+GET https://personalassignment6-t3uq.onrender.com/instructors
 ### Local Host
 GET http://localhost:3000/instructors
 
@@ -16,13 +16,13 @@ GET http://localhost:3000/instructors
 //**********************GET ONE************************
 //COURSE
 ### Render
-GET https://personalassignment5-4gqp.onrender.com/courses/640a7c9ca6ef3814ca785adf
+GET https://personalassignment6-t3uq.onrender.com/courses/640a7c9ca6ef3814ca785adf
 ### Local Host
 GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 
 //INSTRUCTOR
 ### Render
-GET https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3ef
+GET https://personalassignment6-t3uq.onrender.com/instructors/6407998c50ea6decbd5fe3ef
 ### Local Host
 GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
 
@@ -31,7 +31,7 @@ GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
 //*******************POST***************************
 //COURSE
 ### Render
-POST https://personalassignment5-4gqp.onrender.com/courses
+POST https://personalassignment6-t3uq.onrender.com/courses
 Content-Type: application/json
 
 {
@@ -60,7 +60,7 @@ Content-Type: application/json
 
 //INSTRUCTOR
 ### Render
-POST https://personalassignment5-4gqp.onrender.com/instructors
+POST https://personalassignment6-t3uq.onrender.com/instructors
 Content-Type: application/json
 
 {
@@ -90,7 +90,7 @@ Content-Type: application/json
 //******************UPDATE/PUT****************************
 //COURSE
 ### Render
-PUT https://personalassignment5-4gqp.onrender.com/courses/6407997550ea6decbd5fe3e4
+PUT https://personalassignment6-t3uq.onrender.com/courses/6407997550ea6decbd5fe3e4
 Content-Type: application/json
 
 {
@@ -119,7 +119,7 @@ Content-Type: application/json
 
 //INSTRUCTOR
 ### Render
-PUT https://personalassignment5-4gqp.onrender.com/instructors/6407998c50ea6decbd5fe3f3
+PUT https://personalassignment6-t3uq.onrender.com/instructors/6407998c50ea6decbd5fe3f3
 Content-Type: application/json
 
 {
@@ -149,14 +149,14 @@ Content-Type: application/json
 //******************DELETE****************************
 //COURSE
 ### Render
-DELETE https://personalassignment5-4gqp.onrender.com/courses/64
+DELETE https://personalassignment6-t3uq.onrender.com/courses/
 
 ### Local Host
 DELETE http://localhost:3000/courses/640b7d4829adcc0b429819
 
 //INSTRUCTOR
 ### Render
-DELETE https://personalassignment5-4gqp.onrender.com/instructors/640bd134754b09e91746b805
+DELETE https://personalassignment6-t3uq.onrender.com/instructors/640bd134754b09e91746b805
 
 ### Local Host
 DELETE http://localhost:3000/instructors/6407f7d48b3ef02ba7c2822e
