@@ -27,7 +27,7 @@ const getAllCourses = async (req, res, next) => {
 };
 
 //Function to GET one course by ID from database
-const getCourse = async (req, res) => {
+const getCourse = async (req, res, next) => {
   if (ObjectId.isValid(req.params.id)) {
     const courseId = new ObjectId(req.params.id);
     const course = await mongodb

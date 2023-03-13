@@ -16,15 +16,15 @@ GET http://localhost:3000/instructors
 //**********************GET ONE************************
 //COURSE
 ### Render
-GET https://personalassignment6-t3uq.onrender.com/courses/640a7c9ca6ef3814ca785adf
+GET https://personalassignment6-t3uq.onrender.com/courses/640f86d32e491e967b022cae
 ### Local Host
-GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
+GET http://localhost:3000/courses/640f86d32e491e967b022cae
 
 //INSTRUCTOR
 ### Render
-GET https://personalassignment6-t3uq.onrender.com/instructors/6407998c50ea6decbd5fe3ef
+GET https://personalassignment6-t3uq.onrender.com/instructors/640f86a0b22a27f40472ff7e
 ### Local Host
-GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3
+GET http://localhost:3000/instructors/640f86a0b22a27f40472ff7e
 
 
 
@@ -149,14 +149,14 @@ Content-Type: application/json
 //******************DELETE****************************
 //COURSE
 ### Render
-DELETE https://personalassignment6-t3uq.onrender.com/courses/
+DELETE https://personalassignment6-t3uq.onrender.com/courses/640f86d32e491e967b022cae
 
 ### Local Host
-DELETE http://localhost:3000/courses/640b7d4829adcc0b429819
+DELETE http://localhost:3000/courses/640f86d32e491e967b022cae
 
 //INSTRUCTOR
 ### Render
-DELETE https://personalassignment6-t3uq.onrender.com/instructors/640bd134754b09e91746b805
+DELETE https://personalassignment6-t3uq.onrender.com/instructors/640f86a0b22a27f40472ff7e
 
 ### Local Host
-DELETE http://localhost:3000/instructors/6407f7d48b3ef02ba7c2822e
+DELETE http://localhost:3000/instructors/640f86a0b22a27f40472ff7e
