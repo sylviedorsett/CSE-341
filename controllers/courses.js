@@ -1,22 +1,14 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
+const courseSchema = require("../models/courseSchema");
 
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
   try {
-    const courses = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .find();
-    try {
-      courses.toArray().then((list) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(list);
-      });
-    } catch (err) {
-      res.status(400).json({ message: err });
-    }
+      const response = await courseSchema.find();
+     
+      res.setHeader("Content-Type", "application/json");
+      res.status(200).json(list);
   } catch (error) {
     res
       .status(500)
@@ -35,8 +27,13 @@ const getCourse = async (req, res, next) => {
       .db("PersonalAssignment5")
       .collection("courses")
       .find({ _id: courseId });
+    console.log("Hello");
     try {
       course.toArray().then((list) => {
+        if (list.length === 0) {
+          res.status(400).json("No ID by that number exists.")
+          return
+        }
         res.setHeader("Content-Type", "application/json");
         res.status(200).json(list[0]);
       });
@@ -121,11 +118,10 @@ const deleteCourse = async (req, res) => {
       .deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
       res.status(204).json(response);
-    }
-    else {
-    res
-      .status(500)
-      .json(response.error || "Unable to delete contact. Please try again.");
+    } else {
+      res
+        .status(500)
+        .json(response.error || "Unable to delete contact. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
