@@ -8,7 +8,7 @@ const getAllCourses = async (req, res, next) => {
     const courses = await mongodb
       .getDb()
       .db("PersonalAssignment5")
-      .collection("instructors")
+      .collection("courses")
       .find();
     try {
       courses.toArray().then((list) => {
