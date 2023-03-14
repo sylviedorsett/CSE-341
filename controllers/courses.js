@@ -126,7 +126,7 @@ const deleteCourse = async (req, res) => {
       .collection("courses")
       .deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
-      res.status(204).json(response);
+      res.status(200).json(response);
     } else {
       res
         .status(500)
