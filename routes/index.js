@@ -1,8 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const router = require("express").Router();
 
-const controller = require('../controllers');
-
-router.get('/', controller.returnSpouse);
+router.use("/", require("./swagger"));
+router.use("/courses", require("./courses"));
+router.use("/instructors", require("./instructors"));
 
 module.exports = router;
