@@ -2,7 +2,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
-const {auth} = require("express-openid-connect");
+const { auth } = require("express-openid-connect");
 
 const port = process.env.PORT || 3000;
 const server = express();
@@ -10,15 +10,15 @@ const server = express();
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: process.env.secret,
-  baseURL: process.env.baseURL,
-  clientID: process.env.clientID,
-  issuerBaseURL: 'https://dev-48jg214t834p5k5w.us.auth0.com'
+  secret: process.env.SECRET,
+  baseURL: process.env.BASEURL,
+  clientID: process.env.CLIENTID,
+  issuerBaseURL: process.env.ISSUERBASEURL,
 };
 
 server.use(auth(config));
-server.get('/profile', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+server.get("/", (req, res) => {
+  res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
 });
 
 server
