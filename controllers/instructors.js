@@ -1,5 +1,6 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
+const instructorSchema = require("../models/instructorSchema");
 
 //Function to GET all instructors from database
 const getAllInstructors = async (req, res, next) => {
