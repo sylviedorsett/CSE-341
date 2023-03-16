@@ -1,11 +1,14 @@
 //Imports
 const express = require("express");
 const bodyParser = require("body-parser");
-const mongodb = require("./db/connect");
+const mongoose = require("./db/connect");
 const { auth } = require("express-openid-connect");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const port = process.env.PORT || 3000;
 const server = express();
+
 
 const config = {
   authRequired: false,
@@ -47,7 +50,7 @@ process.on("uncaughtException", (err, origin) => {
   );
 });
 
-mongodb.initDb((err, mongodb) => {
+mongoose.initDb((err) => {
   if (err) {
     console.log("Something went wrong.", err);
   } else {

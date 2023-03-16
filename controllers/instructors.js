@@ -1,6 +1,6 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
-const instructorSchema = require("../models/instructorSchema");
+const instructorSchema = require("../models/instructors");
 
 //Function to GET all instructors from database
 const getAllInstructors = async (req, res, next) => {
@@ -20,10 +20,8 @@ const getAllInstructors = async (req, res, next) => {
     }
   } catch (error) {
     res
-      .satus(500)
-      .json(
-        response.error || "An internal error occurred. Please try again later."
-      );
+      .status(500)
+      .json(res.error || "An internal error occurred. Please try again later.");
   }
 };
 

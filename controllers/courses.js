@@ -1,11 +1,12 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
-const CourseSchema = require("../models/courseSchema");
+const courseSchema = require("../models/courses");
 
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
+  console.log("hello");
   try {
-    const response = await CourseSchema.find();
+    const response = await courseSchema.find();
     res.setHeader("Content-Type", "application/json");
     res.status(200).json(response);
   } catch (error) {
@@ -20,18 +21,12 @@ const getCourse = async (req, res, next) => {
   if (ObjectId.isValid(req.params.id)) {
     const courseId = new ObjectId(req.params.id);
     const response = await courseSchema.find({ _id: courseId });
-    try {
-      response.toArray().then((list) => {
-        if (list.length === 0) {
-          res.status(400).json("No ID by that number exists.");
-          return;
-        }
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(list[0]);
-      });
-    } catch (err) {
-      res.status(400).json({ message: err });
+    if (response.length === 0) {
+      res.status(400).json("No ID by that number exists.");
+      return;
     }
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(response);
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
   }
@@ -39,31 +34,24 @@ const getCourse = async (req, res, next) => {
 
 //Function to POST a new course to the database
 const postCourse = async (req, res) => {
-  //Create body to hold data
-  const newCourse = new courseSchema({
-    courseTitle: courseTitle,
-    courseId: courseId,
-    instructor: instructor,
-    classMax: classMax,
-    currentEnrollment: currentEnrollment,
-    startDate: startDate,
-    endDate: endDate,
-  });
-
+  console.log("post called");
   try {
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .insertOne(newCourse);
-    if (response.acknowledged) {
-      console.log(response.insertedId);
-      res.status(201).json(response);
-    }
+    //Create body to hold data
+    const newCourse = new courseSchema({
+      courseTitle: req.body.courseTitle,
+      courseId: req.body.courseId,
+      instructor: req.body.instructor,
+      classMax: req.body.classMax,
+      currentEnrollment: req.body.currentEnrollment,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
+    });
+    //const course = new courseSchema(req.body);
+    await newCourse.save();
+    console.log(newCourse);
+    res.status(201).json(newCourse);
   } catch (error) {
-    res
-      .status(500)
-      .json(response.error || "An error occurred. Please try again.");
+    res.status(500).json(error || "An error occurred. Please try again.");
   }
 };
 
