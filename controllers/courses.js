@@ -1,20 +1,17 @@
 const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
-const courseSchema = require("../models/courseSchema");
+const CourseSchema = require("../models/courseSchema");
 
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
   try {
-    const response = await courseSchema.find().then(() => {
-      response.setHeader("Content-Type", "application/json");
-      response.status(200).json(response);
-    })
-    } catch (error) {
+    const response = await CourseSchema.find();
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(response);
+  } catch (error) {
     res
-      .satus(500)
-      .json(
-        response.error || "An internal error occurred. Please try again later."
-      );
+      .status(500)
+      .json(res.error || "An internal error occurred. Please try again later.");
   }
 };
 
@@ -22,14 +19,9 @@ const getAllCourses = async (req, res, next) => {
 const getCourse = async (req, res, next) => {
   if (ObjectId.isValid(req.params.id)) {
     const courseId = new ObjectId(req.params.id);
-    const course = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .find({ _id: courseId });
-   
+    const response = await courseSchema.find({ _id: courseId });
     try {
-      course.toArray().then((list) => {
+      response.toArray().then((list) => {
         if (list.length === 0) {
           res.status(400).json("No ID by that number exists.");
           return;
@@ -48,15 +40,15 @@ const getCourse = async (req, res, next) => {
 //Function to POST a new course to the database
 const postCourse = async (req, res) => {
   //Create body to hold data
-  const newCourse = {
-    courseTitle: req.body.courseTitle,
-    courseId: req.body.courseId,
-    instructor: req.body.instructor,
-    classMax: req.body.classMax,
-    currentEnrollment: req.body.currentEnrollment,
-    startDate: req.body.startDate,
-    endDate: req.body.endDate,
-  };
+  const newCourse = new courseSchema({
+    courseTitle: courseTitle,
+    courseId: courseId,
+    instructor: instructor,
+    classMax: classMax,
+    currentEnrollment: currentEnrollment,
+    startDate: startDate,
+    endDate: endDate,
+  });
 
   try {
     const response = await mongodb

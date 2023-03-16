@@ -10,5 +10,5 @@ const courseSchema = mongoose.Schema({
     endDate: {type:Date},
 });
 
-module.exports = mongoose.model("courseSchema", courseSchema);
+module.exports = mongoose.model("CourseSchema", courseSchema);
 
