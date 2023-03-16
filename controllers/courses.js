@@ -5,19 +5,10 @@ const courseSchema = require("../models/courseSchema");
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
   try {
-    const courses = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .find();
-    try {
-      courses.toArray().then((list) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(list);
-      });
-    } catch (err) {
-      res.status(400).json({ message: err });
-    }
+    const response = await courseSchema.find();
+    console.log(response);
+    response.setHeader("Content-Type", "application/json");
+    response.status(200).json(list);
   } catch (error) {
     res
       .satus(500)
