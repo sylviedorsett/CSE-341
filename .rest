@@ -18,13 +18,13 @@ GET http://localhost:3000/instructors
 ### Render
 GET https://personalassignment6-t3uq.onrender.com/courses/6407997550ea6decbd5fe3e4
 ### Local Host
-GET http://localhost:3000/courses/640f9918e9181eb09413d6c7
+GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 
 //INSTRUCTOR
 ### Render
 GET https://personalassignment6-t3uq.onrender.com/instructors/6407998c50ea6decbd5fe3ef
 ### Local Host
-GET http://localhost:3000/instructors/640f86a0b22a27f40472ff7e
+GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
 
 
 
