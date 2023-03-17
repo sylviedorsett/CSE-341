@@ -1,10 +1,8 @@
-const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 const courseSchema = require("../models/courses");
 
 //Function to GET all coures from database
 const getAllCourses = async (req, res, next) => {
-  console.log("hello");
   try {
     const response = await courseSchema.find();
     res.setHeader("Content-Type", "application/json");
@@ -34,7 +32,6 @@ const getCourse = async (req, res, next) => {
 
 //Function to POST a new course to the database
 const postCourse = async (req, res) => {
-  console.log("post called");
   try {
     //Create body to hold data
     const newCourse = new courseSchema({
@@ -46,9 +43,7 @@ const postCourse = async (req, res) => {
       startDate: req.body.startDate,
       endDate: req.body.endDate,
     });
-    //const course = new courseSchema(req.body);
     await newCourse.save();
-    console.log(newCourse);
     res.status(201).json(newCourse);
   } catch (error) {
     res.status(500).json(error || "An error occurred. Please try again.");
@@ -69,18 +64,14 @@ const putCourse = async (req, res) => {
       startDate: req.body.startDate,
       endDate: req.body.endDate,
     };
-
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .replaceOne({ _id: courseId }, updatedData);
+    const response = await courseSchema.replaceOne(
+      { _id: courseId },
+      updatedData
+    );
     if (response.modifiedCount > 0) {
       res.status(204).json(response);
     } else {
-      res
-        .status(500)
-        .json(response.error || "An error occurred. Please try again.");
+      res.status(500).json(error || "An error occurred. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
@@ -91,17 +82,13 @@ const putCourse = async (req, res) => {
 const deleteCourse = async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     const courseId = new ObjectId(req.params.id);
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("courses")
-      .deleteOne({ _id: courseId });
+    const response = await courseSchema.deleteOne({ _id: courseId });
     if (response.deletedCount > 0) {
       res.status(200).json(response);
     } else {
       res
         .status(500)
-        .json(response.error || "Unable to delete contact. Please try again.");
+        .json(error || "Unable to delete contact. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");

@@ -1,47 +1,29 @@
-const mongodb = require("../db/connect");
 const ObjectId = require("mongodb").ObjectId;
 const instructorSchema = require("../models/instructors");
 
 //Function to GET all instructors from database
 const getAllInstructors = async (req, res, next) => {
   try {
-    const instructors = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("instructors")
-      .find();
-    try {
-      instructors.toArray().then((list) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(list);
-      });
-    } catch (err) {
-      res.status(400).json({ message: err });
-    }
+    const response = await instructorSchema.find();
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(response);
   } catch (error) {
     res
       .status(500)
       .json(res.error || "An internal error occurred. Please try again later.");
   }
 };
-
-//Function to GET one course by ID from database
+//Function to GET one Instructor by ID from database
 const getInstructor = async (req, res, next) => {
   if (ObjectId.isValid(req.params.id)) {
     const instructorId = new ObjectId(req.params.id);
-    const instructor = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("instructors")
-      .find({ _id: instructorId });
-    try {
-      instructor.toArray().then((list) => {
-        res.setHeader("Content-Type", "application/json");
-        res.status(200).json(list[0]);
-      });
-    } catch (err) {
-      res.status(400).json({ message: err });
+    const response = await instructorSchema.find({ _id: instructorId });
+    if (response.length === 0) {
+      res.status(400).json("No ID by that number exists.");
+      return;
     }
+    res.setHeader("Content-Type", "application/json");
+    res.status(200).json(response);
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
   }
@@ -49,26 +31,18 @@ const getInstructor = async (req, res, next) => {
 
 //Function to POST a new instructor to the database
 const postInstructor = async (req, res) => {
-  //create body to hold data
-  const newInstructor = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    department: req.body.department,
-    email: req.body.email,
-    tenure: req.body.tenure,
-    course: req.body.course,
-  };
-
   try {
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("instructors")
-      .insertOne(newInstructor);
-    if (response.acknowledged) {
-      console.log(response.insertedId);
-      res.status(201).json(response);
-    }
+    //create body to hold data
+    const newInstructor = new instructorSchema({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      department: req.body.department,
+      email: req.body.email,
+      tenure: req.body.tenure,
+      course: req.body.course,
+    });
+    await newInstructor.save();
+    res.status(201).json(newInstructor);
   } catch (error) {
     res
       .status(500)
@@ -89,18 +63,14 @@ const putInstructor = async (req, res) => {
       tenure: req.body.tenure,
       course: req.body.course,
     };
-
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("instructors")
-      .replaceOne({ _id: instructorId }, updatedData);
+    const response = await instructorSchema.replaceOne(
+      { _id: instructorId },
+      updatedData
+    );
     if (response.modifiedCount > 0) {
       res.status(204).json(response);
     } else {
-      res
-        .status(500)
-        .json(response.error || "An error occurred. Please try again.");
+      res.status(500).json(error || "An error occurred. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
@@ -111,17 +81,13 @@ const putInstructor = async (req, res) => {
 const deleteInstructor = async (req, res) => {
   if (ObjectId.isValid(req.params.id)) {
     const instructorId = new ObjectId(req.params.id);
-    const response = await mongodb
-      .getDb()
-      .db("PersonalAssignment5")
-      .collection("instructors")
-      .deleteOne({ _id: instructorId });
+    const response = await instructorSchema.deleteOne({ _id: instructorId });
     if (response.deletedCount > 0) {
       res.status(200).json(response);
     } else {
       res
         .status(500)
-        .json(response.error || "Unable to delete course. Please try again.");
+        .json(error || "Unable to delete contact. Please try again.");
     }
   } else {
     res.status(400).json("Invalid ID entered. Please try again.");
