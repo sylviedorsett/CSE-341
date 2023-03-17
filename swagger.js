@@ -6,7 +6,7 @@ const doc = {
     description:
       "An application to get, update, and delete College Course and Instructor information from a database.",
   },
-  host: "https://personalassignment6-t3uq.onrender.com",
+  host: "personalassignment7.onrender.com",
   schemes: ["https"],
 };
 
