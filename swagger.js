@@ -6,8 +6,8 @@ const doc = {
     description:
       "An application to get, update, and delete College Course and Instructor information from a database.",
   },
-  host: "localhost:3000",
-  schemes: ["http"],
+  host: "https://personalassignment6-t3uq.onrender.com",
+  schemes: ["https"],
 };
 
 const outputFile = "./swagger-output.json";
