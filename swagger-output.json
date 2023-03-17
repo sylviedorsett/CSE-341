@@ -1,26 +1,37 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Personal Assignment 6",
+    "title": "Personal Assignment 8",
     "description": "An application to get, update, and delete College Course and Instructor information from a database.",
     "version": "1.0.0"
   },
   "host": "personalassignment7.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "https"
-  ],
-  "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "parameters": [],
-        "responses": {}
-      }
+
+  "tags": [
+    {
+      "name": "Courses",
+      "description": "Methods to GET, POST, PUT, and DELETE courses."
     },
+    {
+      "name": "Instructors",
+      "description": "Methods to GET, POST, PUT, and DELETE instructors."
+    }
+  ],
+
+
+  "schemes": [
+    "https",
+    "http"
+  ],
+
+  "paths": {
     "/courses/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method retrieves all the courses in a collection.",
         "produces": [
           "application/json"
         ],
@@ -32,10 +43,20 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses"
+            ]
+          }
+        ]
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method creates a new course to add to a collection.",
         "parameters": [
           {
             "name": "body",
@@ -81,12 +102,23 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses",
+              "write: courses"
+            ]
+          }
+        ]
       }
     },
     "/courses/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method retreives one course by its ID from a collection.",
         "produces": [
           "application/json"
         ],
@@ -105,10 +137,20 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses"
+            ]
+          }
+        ]
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method updates a course's data.",
         "parameters": [
           {
             "name": "id",
@@ -163,10 +205,21 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses",
+              "write: courses"
+            ]
+          }
+        ]
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method deletes a course from the collection.",
         "parameters": [
           {
             "name": "id",
@@ -185,12 +238,22 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "write: courses"
+            ]
+          }
+        ]
       }
     },
     "/instructors/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method retrieves all the instructors in a collection.",
         "produces": [
           "application/json"
         ],
@@ -202,10 +265,20 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors"
+            ]
+          }
+        ]
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method creates a new instructor to add to a collection.",
         "parameters": [
           {
             "name": "body",
@@ -248,12 +321,23 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors",
+              "write: instructors"
+            ]
+          }
+        ]
       }
     },
     "/instructors/{id}": {
       "get": {
-        "description": "",
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method retreives one instructor by its ID from a collection.",
         "produces": [
           "application/json"
         ],
@@ -272,10 +356,20 @@
           "400": {
             "description": "Bad Request"
           }
-        }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors"
+            ]
+          }
+        ]
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method updates an instructor's data.",
         "parameters": [
           {
             "name": "id",
@@ -327,10 +421,21 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors",
+              "write: instructors"
+            ]
+          }
+        ]
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method deletes an instructor from the collection.",
         "parameters": [
           {
             "name": "id",
@@ -349,8 +454,65 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "write: instructors"
+            ]
+          }
+        ]
       }
     }
-  }
+  },
+  "definitions": {
+    "Course": {
+      "type": "object",
+      "properties": {
+        "courseTitle": {
+          "type": "String"
+        },
+        "courseId": {
+          "type": "string"
+        },
+        "instructor": {
+          "type": "string"
+        },
+        "classMax": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "currentEnrollment": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      }
+    },
+    "Category": {
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "tenure": {
+        "type": "boolean"
+      },
+      "course": {
+        "type": "string"
+      }
+    }
+  } 
 }

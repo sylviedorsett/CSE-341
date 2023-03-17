@@ -2,7 +2,7 @@ const swaggerAutogen = require("swagger-autogen")();
 
 const doc = {
   info: {
-    title: "Personal Assignment 6",
+    title: "Personal Assignment 8",
     description:
       "An application to get, update, and delete College Course and Instructor information from a database.",
   },
