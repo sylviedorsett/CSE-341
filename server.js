@@ -23,6 +23,7 @@ server.use(auth(config));
 server.get("/", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");
 });
+
 server.get("/profile", (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
