@@ -11,7 +11,8 @@ const doc = {
   securityDefinitions: {
     oAuthSample: {
       type: "oauth2",
-      authorizationUrl: "personalassignment8-udc9.onrender.com/login",
+      authorizationUrl:
+        "https://personalassignment8-udc9.onrender.com/api-docs/personalassignment8-udc9.onrender.com/login",
       flow: "implicit",
       scopes: {
         read_docs: "read your database collections",
