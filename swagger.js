@@ -8,6 +8,17 @@ const doc = {
   },
   host: "https://personalassignment7.onrender.com",
   schemes: ["https"],
+  securityDefinitions: {
+    oAuthSample: {
+      type: "oauth2",
+      authorizationUrl: process.env.ISSUERBASEURL,
+      flow: "implicit",
+      scopes: {
+        read_docs: "read your database collections",
+        write_docs: "modify collections in your database",
+      },
+    },
+  },
 };
 
 const outputFile = "./swagger-output.json";

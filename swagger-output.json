@@ -7,24 +7,29 @@
   },
   "host": "https://personalassignment7.onrender.com",
   "basePath": "/",
-
-  "tags": [
-    {
-      "name": "Courses",
-      "description": "Methods to GET, POST, PUT, and DELETE courses."
-    },
-    {
-      "name": "Instructors",
-      "description": "Methods to GET, POST, PUT, and DELETE instructors."
-    }
-  ],
-
-
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
-
+  "securityDefinitions": {
+    "oAuthSample": {
+      "type": "oauth2",
+      "flow": "implicit",
+      "scopes": {
+        "read_docs": "read your database collections",
+        "write_docs": "modify collections in your database"
+      }
+    },
+    "tags": [
+      {
+        "name": "Courses",
+        "description": "Methods to GET, POST, PUT, and DELETE courses."
+      },
+      {
+        "name": "Instructors",
+        "description": "Methods to GET, POST, PUT, and DELETE instructors."
+      }
+    ]
+  },
   "paths": {
     "/courses/": {
       "get": {

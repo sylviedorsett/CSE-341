@@ -1,4 +1,4 @@
-const ui = require("swagger-ui-express");
+/*const ui = require("swagger-ui");
 // Method can be called in any place after calling constructor SwaggerUIBundle
 
 ui.initOAuth({
@@ -8,4 +8,4 @@ ui.initOAuth({
   additionalQueryStringParams: { test: "hello" },
   useBasicAuthenticationWithAccessCodeGrant: true,
   usePkceWithAuthorizationCodeGrant: true,
-});
+});*/
