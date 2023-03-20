@@ -8,4 +8,5 @@ ui.initOAuth({
   additionalQueryStringParams: { test: "hello" },
   useBasicAuthenticationWithAccessCodeGrant: true,
   usePkceWithAuthorizationCodeGrant: true,
-});*/
+});
+*/

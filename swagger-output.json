@@ -5,7 +5,7 @@
     "description": "An application to get, update, and delete College Course and Instructor information from a database.",
     "version": "1.0.0"
   },
-  "host": "https://localhost:3000",
+  "host": "https://personalassignment8-8lpn.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -13,22 +13,13 @@
   "securityDefinitions": {
     "oAuthSample": {
       "type": "oauth2",
+      "authorizationUrl": "https://personalassignment8-8lpn.onrender.com/login",
       "flow": "implicit",
       "scopes": {
         "read_docs": "read your database collections",
         "write_docs": "modify collections in your database"
       }
-    },
-    "tags": [
-      {
-        "name": "Courses",
-        "description": "Methods to GET, POST, PUT, and DELETE courses."
-      },
-      {
-        "name": "Instructors",
-        "description": "Methods to GET, POST, PUT, and DELETE instructors."
-      }
-    ]
+    }
   },
   "paths": {
     "/courses/": {
