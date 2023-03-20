@@ -6,12 +6,12 @@ const doc = {
     description:
       "An application to get, update, and delete College Course and Instructor information from a database.",
   },
-  host: "personalassignment8-8lpn.onrender.com",
+  host: "personalassignment8-udc9.onrender.com",
   schemes: ["https"],
   securityDefinitions: {
     oAuthSample: {
       type: "oauth2",
-      authorizationUrl: "https://personalassignment8-8lpn.onrender.com/login",
+      authorizationUrl: "personalassignment8-udc9.onrender.com/login",
       flow: "implicit",
       scopes: {
         read_docs: "read your database collections",
